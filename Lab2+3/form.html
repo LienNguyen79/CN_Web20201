@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Yelloww</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    </head>
+    <body style="background-color:yellow;">
+
+        <form method="post" action="form.php">    
+            <table align=”center”>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" size="20" maxlength="30" name="name"></td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><input type="text" size="20" maxlength="40" name="email"></td>
+                </tr>
+                <tr>
+                    <td>Class: </td>
+                    <td><input type="text" size="20" maxlength="15" name="class"></td>
+                </tr>
+                <tr>
+                    <td>University</td>
+                    <td><input type="text" size="20" maxlength="40" name="university"></td>
+                </tr>   
+                <tr>
+                    <td>Gender: </td>
+                    <td>
+                        <input type="radio" name="gender" value="Male">Male 
+                        <input type="radio" name="gender" value="Female">Female
+                        <input type="radio" name="gender" value="Other">Other
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hobby: </td>
+                    <td>
+                        <input type="checkbox" name="hobby[]" value="Shopping" >Shopping<br>
+                        <input type="checkbox" name="hobby[]" value="Read book" >Read book <br>
+                        <input type="checkbox" name="hobby[]" value="Sleeping" >Sleeping <br>
+                        <input type="checkbox" name="hobby[]" > Other <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"> <input type="SUBMIT" value="Submit"></td>
+                    <td align="left"> <input type="RESET" value="Reset"></td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>
