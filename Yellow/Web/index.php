@@ -9,8 +9,13 @@ spl_autoload_register(function (string $class_name) {
 });
 /*index.php yêu cầu tất cả các file cần cho việc khởi tạo điều phối*/
 //require(ROOT . 'Config/core.php');
-//require(ROOT . 'router.php');
-//require(ROOT . 'request.php');
+//require('router.php');
+require('request.php');
+
+$url = new Request();
+echo $url->url;
+
+
 //require(ROOT . 'dispatcher.php');
 
 new Core\Controller();

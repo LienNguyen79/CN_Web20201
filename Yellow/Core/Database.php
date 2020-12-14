@@ -1,7 +1,7 @@
 <?php
 #file xử lý kết nối tới database
 class Database {
-    private static $bđ = null;
+    private static $bdd = null;
     private function __construct(){       
     }
     public static function getBdd(){
