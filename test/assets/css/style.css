@@ -1,0 +1,9 @@
+.errorMsg {
+    color: #cc0000;
+    margin-bottom: 10px
+}
+.center_img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}

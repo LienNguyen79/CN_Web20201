@@ -1,18 +1,19 @@
 <?php
-class DB
+session_start();
+function DB()
 {
-    private static $instance = NULl;
-    public static function getInstance() {
-      if (!isset(self::$instance)) {
+  // $connect = new PDO('mysql:host=localhost;dbname=english_db' , 'root' , '');
+  // $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
         try {
-          self::$instance = new PDO('mysql:host=localhost;dbname=english_db', 'root', '');
-          self::$instance->exec("SET NAMES 'utf8'");
-          
+          $dbConnection = new PDO('mysql:host=localhost;dbname=english_db', 'root', '');
+          $dbConnection->exec("SET NAMES 'utf8'");
+          $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          return $dbConnection;
         } catch (PDOException $ex) {
-          die($ex->getMessage());
+          echo 'Connection failed: ' . $ex->getMessage();
+          
         }
-      }
-      echo "SELECT * from user where id = 1";
-      return self::$instance;
-    }
-}
+}      
+     
+    

@@ -2,10 +2,10 @@
 require_once('controllers' . DS .'base_controller.php');
 require_once('models'. DS .'user.php');
 require_once('controllers'. DS .'home_controller.php');
+require_once('views'.DS.'authentication'. DS .'error.php');
 //require_once('views'. DS .'authentication'. DS .'login.php');
 
-$errorMsgLogin = '';
-$errorMsgReg = '';
+
 class AuthenticationController extends BaseController
 {
 
@@ -16,52 +16,67 @@ class AuthenticationController extends BaseController
   }
   function login()
   {
-    
-    // echo "Như cái cc";
-    require_once("views/authentication/login.php");
-  
-    if (isset($_POST['btn_submit'])){
-      //echo 'he';
-      $username = $_POST['username'];
-      $email = $_POST['email'];
-      $password = $_POST['password'];    
-       
-      if (strlen(trim($username)) > 1 && strlen(trim($email)) > 1 && strlen(trim($password)) > 1) {
-        $user = new User();
-        $id = $user->userLogin($username,$email, $password);
-        if ($id) {
-            $this->render ('home');}
-        else {
-            $errorMsgLogin = "Sai tài khoản hoặc mật khẩu.";
-            
-        }  
+    $homeController = new HomeController;
+    $homeController->login();
+    $userClass = new User; 
+    if (!empty($_POST['loginSubmit'])) {
+      $usernameEmail = $_POST['usernameEmail'];
+      $password = $_POST['password'];
+      if (strlen(trim($usernameEmail)) > 1 && strlen(trim($password)) > 1) {
+          $id = $userClass->userLogin($usernameEmail, $password);
+          if ($id) {
+              //$url = 'authentication'.DS.'home.php';
+              header("Location: ../test/index.php?controller=homepage&action=home");
+              // $this->folder = 'authentication';
+              // $this->render('home');
+          } else {
+              echo "Sai tài khoản hoặc mật khẩu";
+          }
       }
-    }
-  }
+  }}
   function register(){
-    if (isset($_POST['btn_submit'])) {
+    $homeController = new HomeController;
+    $homeController->register();
+    $errorMsgReg = '';
+    $userClass = new User;
+    if (!empty($_POST['signupSubmit'])) {
       $username = $_POST['usernameReg'];
       $email = $_POST['emailReg'];
-      $password = $_POST['passwordReg'];      
-      $username_check = preg_match('~^[A-Za-z0-9_]{3,20}$~i', $username);
-      $email_check = preg_match('~^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.([a-zA-Z]{2,4})$~i', $email);
-      $password_check = preg_match('~^[A-Za-z0-9!@#$%^&*()_]{6,20}$~i', $password);
-  
-      if ($username_check && $email_check && $password_check) {
-          $id = $user->userRegister($username,$email, $password);
-          if ($id) {              
-              render('home');
+      $password = $_POST['passwordReg'];
+      //$username_check = preg_match('~^[A-Za-z0-9_]{3,20}$~i', $username);
+      //$email_check = preg_match('~^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.([a-zA-Z]{2,4})$~i', $email);
+      //$password_check = preg_match('~^[A-Za-z0-9!@#$%^&*()_]{6,20}$~i', $password);
+      //echo "đầu cắt moi huhu";
+      if ($username && $email && $password ) {
+          $id = $userClass->userRegistration($username, $email, $password);
+          
+          if ($id) {
+              //$url = BASE_URL . 'home.php';
+              header("Location: ../test/index.php?controller=homepage&action=home");
+
           } else {
               $errorMsgReg = "Tên người dùng hoặc Email đã tồn tại.";
+              echo $errorMsgReg;
           }
       } else {
           $errorMsgReg = "Vui lòng kiểm tra lại thông tin nhập vào.";
-      }
+          echo $errorMsgReg;
+      }      
+     
+  } }
+
+  function logout(){
+    $session_userId = '';
+    $_SESSION['userId'] = '';
+    if (empty($session_userId) && empty($_SESSION['userId'])) {
+    header("Location: ../test/index.php?controller=authentication&action=login");
   }
   }
 
-  public function error()
-  {
-    $this->render('error');
+  
+  function home(){
+    $this->folder = 'homepage';
+    $this->render('home');
   }
+
 }
