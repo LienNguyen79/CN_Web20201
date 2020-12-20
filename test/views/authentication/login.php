@@ -20,7 +20,7 @@
                 <input type="password" name="password" class="form-control" autocomplete="off"/>
                 <input type="submit" class="btn btn-primary" name="loginSubmit" value="Đăng nhập">
             </form>
-			<h6>Bạn chưa có tài khoản? <a href = "../test/index.php?controller=authentication&action=register">Đăng ký</a></h6>
+			<h2>Bạn chưa có tài khoản? <a href = "../test/index.php?controller=authentication&action=register">Đăng ký</a></h2>
         </div>
 </div>
 </body>

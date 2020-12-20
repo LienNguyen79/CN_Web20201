@@ -20,8 +20,7 @@
                 <label style="margin-left: 50px;">Mật khẩu :</label>
                 <input type="password" name="passwordReg" autocomplete="off" class="form-control"/>
                 <input type="submit" class="btn btn-primary" name="signupSubmit" value="Đăng ký">
-               
-                <h3><a href = "../test/index.php?controller=authentication&action=login" >Đăng nhập</a></h3>
+                <h2><a href = "../test/index.php?controller=authentication&action=login" >Đăng nhập</a></h2>
             </form>
             
         </div>
