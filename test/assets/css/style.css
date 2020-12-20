@@ -7,3 +7,113 @@
     margin-left: auto; 
     margin-right: auto;
 }
+
+body{
+    background-color: #000;
+    background-image: url('../images/breadcrumb.png'); 
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.loginbox{
+    width: 320px;
+    height: 450px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+.avatar{
+    width: 167px;
+    height: 47px; 
+    position: absolute;
+    top:0px;
+    left:25%;
+    
+} 
+
+h3{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginbox label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox img{
+    margin-left: auto;
+    margin-right: auto;
+}
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.loginbox a:hover
+{
+    color: #ffc107;
+}
+/* Tạo ba cột bằng nhau, float cạnh nhau */
+.column {
+    float: left;
+    max-width: 33.33%;
+    padding: 15px;
+  }
+  
+  /* Clear float khác sau các cột */
+  .footer:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Bố cục linh hoạt: ba cột xếp chồng lên nhau thay vì cạnh nhau khi màn hình 
+  có chiều rộng dưới 600px */
+    @media screen and (max-width:600px) {
+      .column {
+      width: 100%;
+    }
+  }

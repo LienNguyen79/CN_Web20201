@@ -19,6 +19,10 @@ class HomeController extends BaseController{
     public function home(){
       $this->render('home');
     }
+<<<<<<< HEAD
 
 
+=======
+    
+>>>>>>> b46e02c52a5bd4cfd56abe3a0c71c876a194d750
 }

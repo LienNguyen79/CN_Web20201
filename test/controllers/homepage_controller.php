@@ -19,8 +19,14 @@ class HomepageController extends BaseController{
             }
         } 
     }
+<<<<<<< HEAD
     public function upload(){
         $this->render('word_form');
       }
     
+=======
+    function about(){
+        $this -> render('about');
+      }
+>>>>>>> b46e02c52a5bd4cfd56abe3a0c71c876a194d750
 }

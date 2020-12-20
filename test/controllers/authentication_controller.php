@@ -30,14 +30,14 @@ class AuthenticationController extends BaseController
               // $this->folder = 'authentication';
               // $this->render('home');
           } else {
-              echo "Sai tài khoản hoặc mật khẩu";
+            header("Location: ../test/index.php?controller=homepage&action=error");
           }
       }
   }}
   function register(){
     $homeController = new HomeController;
     $homeController->register();
-    $errorMsgReg = '';
+     $errorMsgReg = '';
     $userClass = new User;
     if (!empty($_POST['signupSubmit'])) {
       $username = $_POST['usernameReg'];
@@ -51,19 +51,24 @@ class AuthenticationController extends BaseController
           $id = $userClass->userRegistration($username, $email, $password);
           
           if ($id) {
-              //$url = BASE_URL . 'home.php';
+              
               header("Location: ../test/index.php?controller=homepage&action=home");
-
+         
           } else {
               $errorMsgReg = "Tên người dùng hoặc Email đã tồn tại.";
-              echo $errorMsgReg;
+              echo '<h1 style="color: red; text-align: center; font-size: 22px; margin-top:45%;">
+              Tên người dùng hoặc Email đã tồn tại.
+              </h1>';
           }
       } else {
           $errorMsgReg = "Vui lòng kiểm tra lại thông tin nhập vào.";
-          echo $errorMsgReg;
+          echo '<p style="color: red; text-align: center">
+          Vui lòng kiểm tra lại thông tin nhập vào.
+              </p>';
       }      
      
-  } }
+  } 
+}
 
   function logout(){
     $session_userId = '';
