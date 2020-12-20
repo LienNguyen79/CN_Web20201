@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/home_style.css" type="text/css">
   </head>
 <body>
+
   <header>
     <div class="topnav">
       <a href = "../test/index.php?controller=homepage&action=home"><img src="../test/assets/images/logo.png" alt="logo"></a>
@@ -23,6 +24,7 @@
       </div>
       <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>
     </div>
+
   </header>
   <section>
     <div  class="banner_part">
@@ -74,5 +76,6 @@
         </div>
     </div>               
   </footer>
+
 </body>
 </html>
