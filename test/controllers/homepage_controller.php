@@ -25,12 +25,9 @@ class HomepageController extends BaseController{
       }
     
 
-    function about(){
+    public function about(){
         $this -> render('about');
       }
 
-    function about(){
-        $this -> render('about');
-      }
-
+    
 }

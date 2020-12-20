@@ -35,8 +35,10 @@
 
   <section>
     <div  class ="midnav"> 
-      <a href="">Kho từ của bạn</a>
+      <a href="../test/index.php?controller=learn&action=word_form">Thêm từ mới</a>
+      <a href="../test/index.php?controller=learn&action=gender">Kho từ của bạn</a>
       <a href="">Chế độ kiểm tra</a>
+      <a href="">Tính năng khác sẽ phát triển trong tương lai</a>
     </div>
    
   </section>
