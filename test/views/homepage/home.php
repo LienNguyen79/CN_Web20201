@@ -9,32 +9,7 @@
   <link rel="stylesheet" href="assets/css/home_style.css" type="text/css">
   </head>
 <body>
-<<<<<<< HEAD
-<header>
-<div class="topnav">
-    <a href = "../test/index.php?controller=homepage&action=home"><img src="../test/assets/images/logo.png" alt="logo"></a>
-    <a class="active" href="#home">Trang chủ</a>
-    <a href="#about">Về chúng tôi</a>
-    <a href="#contact">Liên hệ</a>
-    <div class="search-container">
-    <form method="POST" action="" name="search">
-      <input type="text" placeholder="Tìm kiếm từ.." name="searchWord">
-      <!-- <button type="submit" name="searchSubmit"><i class="fa fa-search"><img src="../test/assets/images/search_icon.png" style="width:20px;height:20px"></i></button> -->
-      <input type="submit" class="btn btn-primary" name="searchSubmit" value="Tìm kiếm">
-    </form>
-    </div>
-    <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>
-</div>
-</header>
-<div>
-<img src="../test/assets/images/banner_img.png" alt="banner" class = "center_img">
-<h1 style="text-align:center;">Let's Learn English</h1>
-<a href="../test/index.php?controller=learn&action=word_form">Thêm từ mới</a>
-<a href="../test/index.php?controller=learn&action=gender">Kho từ của bạn</a>
-<a href="">Chế độ kiểm tra</a>
-</div>
-<footer></footer>
-=======
+
   <header>
     <div class="topnav">
       <a href = "../test/index.php?controller=homepage&action=home"><img src="../test/assets/images/logo.png" alt="logo"></a>
@@ -49,6 +24,7 @@
       </div>
       <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>
     </div>
+
   </header>
   <section>
     <div  class="banner_part">
@@ -100,6 +76,6 @@
         </div>
     </div>               
   </footer>
->>>>>>> b46e02c52a5bd4cfd56abe3a0c71c876a194d750
+
 </body>
 </html>
