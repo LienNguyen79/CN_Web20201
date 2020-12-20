@@ -13,9 +13,9 @@
   <header>
     <div class="topnav">
       <a href = "../test/index.php?controller=homepage&action=home"><img src="../test/assets/images/logo.png" alt="logo"></a>
-      <a class="active" href="../test/index.php?controller=homepage&action=home">Trang chủ</a>
+      <a href="../test/index.php?controller=homepage&action=home">Trang chủ</a>
       <a href="../test/index.php?controller=homepage&action=about">Về chúng tôi</a>
-      <a href="#contact">Liên hệ</a>
+      <a class="active" href="../test/index.php?controller=homepage&action=contact">Liên hệ</a>
       <div class="search-container">
       <form method="post" action="/action_page.php">
         <input type="text" placeholder="Tìm kiếm từ.." name="search">
@@ -26,22 +26,16 @@
     </div>
 
   </header>
-  <section>
-    <div  class="banner_part">
-      <h1 style="text-align:center;">Let's Learn English</h1>
-      <img src="../test/assets/images/banner_img.png" alt="banner" class = "center_img">
-      </div>
-  </section> 
-
-  <section>
-    <div  class ="midnav"> 
-      <a href="../test/index.php?controller=learn&action=word_form">Thêm từ mới</a>
-      <a href="../test/index.php?controller=learn&action=gender">Kho từ của bạn</a>
-      <a href="">Chế độ kiểm tra</a>
-      <a href="">Tính năng khác sẽ phát triển trong tương lai</a>
-    </div>
-   
-  </section>
+    <section class="contact_us">
+        <div>
+            <h4>Trang chủ / Kết nối với chúng tôi</h4>
+                <div class ="contact_info">
+                    <p><span> Địa chỉ :</span> Số 1 Đại Cồ Việt, Phường Bách Khoa, Quận Hai Bà Trưng, Hà Nội </p>
+                    <p><span> Điện thoại :</span> +84 964530128</p>
+                    <p><span> Email : </span>huynguyenquang344@gmail.com </p>
+                </div>
+        </div>
+    </section>
   <footer class="footer">
     <div class="column">
         <a href="../test/index.php?controller=homepage&action=home"> <img src="../test/assets/images/logo.png" alt=""> </a> 

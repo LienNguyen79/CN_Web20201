@@ -29,5 +29,7 @@ class HomepageController extends BaseController{
         $this -> render('about');
       }
 
-    
+      public function contact(){
+        $this -> render('contact');
+      }
 }

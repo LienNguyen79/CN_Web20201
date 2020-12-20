@@ -4,7 +4,7 @@ $controllers = array(
 
   'learn' => ['gender','word_form'],
 
-  'homepage' => ['home', 'about'],
+  'homepage' => ['home', 'about', 'contact'],
   
 
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
