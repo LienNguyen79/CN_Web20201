@@ -2,7 +2,7 @@
 $controllers = array(
   'authentication' => ['login', 'error', 'register', 'logout'],
   'homepage' => ['home'],
-  
+  'learn' => ['gender','word_form'],
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi

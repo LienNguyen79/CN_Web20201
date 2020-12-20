@@ -90,9 +90,10 @@
     <a href="#about">Về chúng tôi</a>
     <a href="#contact">Liên hệ</a>
     <div class="search-container">
-    <form method="post" action="/action_page.php">
-      <input type="text" placeholder="Tìm kiếm từ.." name="search">
-      <button type="submit" name = "searchSubmit"><i class="fa fa-search"><img src="../test/assets/images/search_icon.png" style="width:20px;height:20px"></i></button>
+    <form method="POST" action="" name="search">
+      <input type="text" placeholder="Tìm kiếm từ.." name="searchWord">
+      <!-- <button type="submit" name="searchSubmit"><i class="fa fa-search"><img src="../test/assets/images/search_icon.png" style="width:20px;height:20px"></i></button> -->
+      <input type="submit" class="btn btn-primary" name="searchSubmit" value="Tìm kiếm">
     </form>
     </div>
     <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>
@@ -101,7 +102,8 @@
 <div>
 <img src="../test/assets/images/banner_img.png" alt="banner" class = "center_img">
 <h1 style="text-align:center;">Let's Learn English</h1>
-<a href="">Kho từ của bạn</a>
+<a href="../test/index.php?controller=learn&action=word_form">Thêm từ mới</a>
+<a href="../test/index.php?controller=learn&action=gender">Kho từ của bạn</a>
 <a href="">Chế độ kiểm tra</a>
 </div>
 <footer></footer>
