@@ -14,6 +14,7 @@ class User
     $req->bindParam("password",$password,PDO::PARAM_STR);
     $req->execute();
     $count = $req->rowCount();
+    
     $data = $req->fetch(PDO::FETCH_OBJ);
     $db = null;
     if ($count) {

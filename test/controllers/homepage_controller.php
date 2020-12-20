@@ -9,4 +9,7 @@ class HomepageController extends BaseController{
     function home(){
         $this->render('home');
     }
+    function about(){
+        $this -> render('about');
+      }
 }

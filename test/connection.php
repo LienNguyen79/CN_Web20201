@@ -2,18 +2,19 @@
 session_start();
 function DB()
 {
-  // $connect = new PDO('mysql:host=localhost;dbname=english_db' , 'root' , '');
+  // $connect = new PDO('mysql:host=localhost;dbname=english_db' , 'root' , '2456199');
   // $connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-        try {
-          $dbConnection = new PDO('mysql:host=localhost;dbname=english_db', 'root', '');
-          $dbConnection->exec("SET NAMES 'utf8'");
-          $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          return $dbConnection;
-        } catch (PDOException $ex) {
-          echo 'Connection failed: ' . $ex->getMessage();
+      
           
-        }
+  try {
+    $dbconnection = new PDO('mysql:host=localhost;dbname=english_db', 'root','24561999');
+    $dbconnection->exec("SET NAMES 'utf8'");
+    $dbconnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $dbconnection;
+  } catch (PDOException $e) {
+       
+        echo 'Connection failed: ' . $ex->getMessage();
+  }
 }      
      
     

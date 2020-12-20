@@ -1,7 +1,7 @@
 <?php
 $controllers = array(
   'authentication' => ['login', 'error', 'register', 'logout'],
-  'homepage' => ['home'],
+  'homepage' => ['home', 'about'],
   
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
