@@ -33,7 +33,9 @@ class LearnController extends BaseController{
                 
                 $size = $_FILES['sound']['size'];
                 $note = $_POST['note'];
-                if ($word=="" || $mean==""){ echo "Không được để trống từ và ý nghĩa";}
+                if ($word=="" || $mean==""){echo '<p style="color: red; text-align: center">
+                    Không được để trống từ và ý nghĩa
+                        </p>';}
                 else 
                 {
                     if(strlen($fileSound) )
@@ -70,8 +72,12 @@ class LearnController extends BaseController{
                     }
                     $data = new Word;
                     $data = $data->addWord($word, $type, $mean,$image,$sound,$note);
-                    if ($data){echo "Thêm từ thành công.";
-                    echo "Hãy xem trong ";
+                    if ($data){echo '<p style="color: green; text-align: center">
+                        Thêm từ thành công.
+                            </p>';
+                            echo '<p style="color: red; text-align: center">
+                            Hãy xem trong :
+                                </p>';
                     echo '<a href = "../test/index.php?controller=learn&action=gender">Kho từ của bạn</a>';}
                 }
             }
