@@ -4,8 +4,7 @@ class Word {
     {
 
     }
-    public function genderWord(){
-        $list = [];
+    public function genderWord(){        
         $db = DB();
         $result  = $db->prepare("SELECT * FROM word WHERE user_id =:user_id");
         $result->bindParam(":user_id", $_SESSION['userId']);
