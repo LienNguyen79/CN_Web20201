@@ -13,11 +13,11 @@
             <h3>Form đăng ký</h3>
             <form method="post" action="" name="signup">
                 <img src="../test/assets/images/logo.png" alt= "logo" class="avatar">
-				<label style="margin-left: 50px;">Tài khoản :</label>
+				<label>Tài khoản </label>
                 <input type="text" name="usernameReg" autocomplete="off" class="form-control"/>
-                <label style="margin-left: 50px;">Email :</label>
+                <label>Email </label>
                 <input type="text" name="emailReg" autocomplete="off" class="form-control"/>
-                <label style="margin-left: 50px;">Mật khẩu :</label>
+                <label>Mật khẩu </label>
                 <input type="password" name="passwordReg" autocomplete="off" class="form-control"/>
                 <input type="submit" class="btn btn-primary" name="signupSubmit" value="Đăng ký">
                

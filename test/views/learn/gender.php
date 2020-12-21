@@ -11,6 +11,7 @@
   <th>name_word</th>
   <th>type_word</th>
   <th>mean</th>
+  <th>image</th>
   <th>sound</th>
   <th>note</th>
   <th>created_at</th>

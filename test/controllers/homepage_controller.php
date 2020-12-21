@@ -15,7 +15,8 @@ class HomepageController extends BaseController{
                $words = new Word; 
                $data = $words->find($searchWord);
                $data = array('words' => $data);
-                $this->render('gender',$data);
+                //$this->render('gender_search',$data);
+                header("Location: ../test/index.php?controller=learn&action=gender_search");
             }
         } 
     }

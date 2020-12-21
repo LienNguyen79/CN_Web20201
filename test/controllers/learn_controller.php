@@ -14,34 +14,71 @@ class LearnController extends BaseController{
         $this->render('gender',$data);
     }
 
-    function word_form(){
-        $this->render('word_form');
+    function word_form()
+    {    $this->render('word_form');
         if(isset($_POST['submit']))
         {
-        $path = "../test/assets/sound/"; //file to place within the server
-        $valid_formats1 = array("mp3", "ogg", "flac"); //list of file extention to be accepted
-        if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST")
-            {
-                $file1 = $_FILES['sound']['name']; //input file name in this code is file1
+            $pathSound = "../test/assets/sound/"; //file to place within the server
+            $valid_formats_sound = array("mp3", "ogg", "flac"); //list of file extention to be accepted
+            $pathImage = "../test/assets/images/word_images/";
+            $valid_formats_image = array("img", "png", "gif");
+            if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST")
+            {   $word = $_POST['word'];
+                $type = $_POST['type'];
+                $mean = $_POST['mean'];
+                $sound="";
+                $image="";
+                $fileImage = $_FILES['image']['name'];
+                $fileSound = $_FILES['sound']['name']; //input file name in this code is fileSound
+                
                 $size = $_FILES['sound']['size'];
-
-                if(strlen($file1))
+                $note = $_POST['note'];
+                if ($word=="" || $mean==""){ echo "Không được để trống từ và ý nghĩa";}
+                else 
+                {
+                    if(strlen($fileSound) )
+                        {
+                            list($txt, $ext) = explode(".", $fileSound);
+                            if(in_array($ext,$valid_formats_sound))
+                            {
+                                $actual_sound_name = $txt.".".$ext;
+                                $tmp = $_FILES['sound']['tmp_name'];
+                                //echo $tmp;
+                                if(move_uploaded_file($tmp, $pathSound.$actual_sound_name))
+                                    {   
+                                        $sound= $pathSound.$fileSound;                                
+                                    }
+                                else
+                                    echo "failed";            
+                            }
+                        }
+                    
+                    if(strlen($fileImage) )
                     {
-                        list($txt, $ext) = explode(".", $file1);
-                        if(in_array($ext,$valid_formats1))
+                        list($txt, $ext) = explode(".", $fileImage);
+                        if(in_array($ext,$valid_formats_image))
                         {
                             $actual_image_name = $txt.".".$ext;
-                            $tmp = $_FILES['sound']['tmp_name'];
-                            if(move_uploaded_file($tmp, $path.$actual_image_name))
-                                {
-                                    //viết hàm lưu vào cơ sở dữ liệu
+                            $tmp = $_FILES['image']['tmp_name'];
+                            if(move_uploaded_file($tmp, $pathImage.$actual_image_name))
+                                {   
+                                    $image= $pathImage.$fileImage;   
                                 }
                             else
                                 echo "failed";            
                         }
+                    }
+                    $data = new Word;
+                    $data = $data->addWord($word, $type, $mean,$image,$sound,$note);
+                    if ($data){echo "Thêm từ thành công.";
+                    echo "Hãy xem trong ";
+                    echo '<a href = "../test/index.php?controller=learn&action=gender">Kho từ của bạn</a>';}
                 }
             }
-        }   
-    }
 
+        }
+        //echo $image;
+    
+    }   
 }
+

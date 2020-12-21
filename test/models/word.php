@@ -25,4 +25,27 @@ class Word {
       var_dump($data);
       return $data;
     }
+    public function addWord($word, $type, $mean,$image,$sound,$note)
+    {
+        try {
+            $db = DB();
+
+                $req = $db->prepare("INSERT INTO word(name_word,user_id,type_word,mean,image,sound, note) VALUES (:word,:user_id,:type_word,:mean,:image, :sound,:note)");
+                $req->bindParam(":user_id", $_SESSION['userId']);
+                $req->bindParam("word", $word, PDO::PARAM_STR);
+                $req->bindParam("type_word", $type, PDO::PARAM_STR);
+                $req->bindParam("mean", $mean, PDO::PARAM_STR);
+                $req->bindParam("image", $image );
+                $req->bindParam("sound", $sound, PDO::PARAM_STR);
+                $req->bindParam("note", $note, PDO::PARAM_STR);
+                $req->execute();
+                $id = $db->lastInsertId();
+                $db = null;
+                return true;
+  
+            
+        } catch (PDOException $e) {
+            echo '{"error":{"text":' . $e->getMessage() . '}}';
+        }
+    }
 }

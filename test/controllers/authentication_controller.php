@@ -30,7 +30,9 @@ class AuthenticationController extends BaseController
               // $this->folder = 'authentication';
               // $this->render('home');
           } else {
-            header("Location: ../test/index.php?controller=homepage&action=error");
+            echo '<p style="color: red; text-align: center">
+            Vui lòng kiểm tra lại thông tin nhập vào.
+                </p>';
           }
       }
   }}
@@ -56,9 +58,9 @@ class AuthenticationController extends BaseController
          
           } else {
               $errorMsgReg = "Tên người dùng hoặc Email đã tồn tại.";
-              echo '<h1 style="color: red; text-align: center; font-size: 22px; margin-top:45%;">
-              Tên người dùng hoặc Email đã tồn tại.
-              </h1>';
+              echo '<p style="color: red; text-align: center">
+              Tên người dùng hoặc Email đã tồn tại
+                  </p>';
           }
       } else {
           $errorMsgReg = "Vui lòng kiểm tra lại thông tin nhập vào.";
