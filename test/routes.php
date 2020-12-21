@@ -4,11 +4,7 @@ $controllers = array(
 
   'learn' => ['gender','word_form'],
 
-<<<<<<< HEAD
-  'homepage' => ['home', 'about','gender_search'],
-=======
-  'homepage' => ['home', 'about', 'contact'],
->>>>>>> 1c52f5c10e8d75d3e0ddee6b283aa5897eadeaab
+  'homepage' => ['home', 'about','gender_search', 'contact'],
   
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
