@@ -15,11 +15,11 @@
       <a href = "../test/index.php?controller=homepage&action=home"><img src="../test/assets/images/logo.png" alt="logo"></a>
       <a class="active" href="../test/index.php?controller=homepage&action=home">Trang chủ</a>
       <a href="../test/index.php?controller=homepage&action=about">Về chúng tôi</a>
-      <a href="#contact">Liên hệ</a>
+      <a href="../test/index.php?controller=homepage&action=contact">Liên hệ</a>
       <div class="search-container">
       <form method="POST" action="">
         <input type="text" placeholder="Tìm kiếm từ.." name="search">
-        <button type="submit" name = "searchSubmit"><a href = "../test/index.php?controller=learn&action=gender"></a><i class="fa fa-search"></i></button>
+        <button type="submit" name = "searchSubmit"><img src="../test/assets/images/search_icon.png" alt="icon" style=" width: 20px; height: 20px;"><a href = "../test/index.php?controller=learn&action=gender"></a></button>
       </form>
       </div>
       <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>
