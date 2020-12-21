@@ -5,7 +5,17 @@
 <!-- <audio controls>
   <source src="../test/assets/sound/alo.mp3" type="audio/mpeg">
 </audio> -->
-<table style="width:100%">
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kho từ của bạn</title>
+    
+  <link rel="stylesheet" href="assets/css/word_form_style.css" type="text/css">
+  </head>
+
+<table >
   <!-- <th>Số thứ tự</th> -->
   <th>Từ</th>
   <th>Loại từ</th>
@@ -30,9 +40,9 @@
         <td><?php echo  $arr['note']; ?> </td>
         <td><?php echo  $arr['created_at']; ?> </td>
         <td><?php echo  $arr['updated_at']; ?> </td>
-        
+      
   <?php
-      }
+    } 
     echo "</tr>";
       
   ?>
