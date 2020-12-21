@@ -56,3 +56,14 @@ body{
     background: #ffc107;
     color: #000;
 }
+table{
+    border-collapse:collapse;
+    background-color:yellow;
+    width:100%;
+}
+td{
+    background-color:#fff;
+}
+table th, td{
+    border:1px solid black;
+}

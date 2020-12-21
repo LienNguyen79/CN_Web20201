@@ -48,7 +48,7 @@ class AuthenticationController extends BaseController
       //$username_check = preg_match('~^[A-Za-z0-9_]{3,20}$~i', $username);
       //$email_check = preg_match('~^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.([a-zA-Z]{2,4})$~i', $email);
       //$password_check = preg_match('~^[A-Za-z0-9!@#$%^&*()_]{6,20}$~i', $password);
-      //echo "đầu cắt moi huhu";
+      
       if ($username && $email && $password ) {
           $id = $userClass->userRegistration($username, $email, $password);
           
