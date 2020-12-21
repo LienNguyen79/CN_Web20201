@@ -35,8 +35,8 @@
         <td><?php echo  $arr['name_word']; ?> </td>
         <td><?php echo  $arr['type_word']; ?> </td>
         <td><?php echo  $arr['mean']; ?> </td>
-        <td><img src='<?php echo $arr['image'] ?>' alt="không có ảnh"> </td>
-        <td><audio controls><source src="<?php echo $arr['sound'] ?>" type="audio/mpeg" ></audio> </td>
+        <td><img style=" width: 80px; height: 80px;  margin :auto; display: block;" src='<?php echo $arr['image'] ?>' alt="Không có hình ảnh"> </td>
+        <td><audio controls><source src="<?php echo $arr['sound'] ?>" type="audio/mpeg"></audio> </td>
         <td><?php echo  $arr['note']; ?> </td>
         <td><?php echo  $arr['created_at']; ?> </td>
         <td><?php echo  $arr['updated_at']; ?> </td>
