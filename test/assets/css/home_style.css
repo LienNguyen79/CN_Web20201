@@ -1,3 +1,8 @@
+.center_img {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
 * {box-sizing: border-box;}
  
  body {
@@ -81,19 +86,21 @@ h1{
  .banner_part img{
     width: 700px;
     height: 700px;  
-    background-color: #000;
+    background-color: #fff;
     margin-left:25%; 
     margin-right:25% ;
  }
  .midnav {
     overflow: hidden;
-    background-color: #e9e9e9;
+
 }
+
  .midnav a {
     width: 50%;
+    background-color: #460de6;
     float: left;
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -101,13 +108,13 @@ h1{
  }
   
  .midnav a:hover {
-   background-color: rgb(38, 16, 235);
-   color: #000;
+   background-color: rgb(152, 202, 14);
+   color: white;
  }
   
  .midnav a.active {
-   background-color:rgb(38, 16, 235);
-   color: #000;
+   background-color: rgb(159, 212, 12);
+   color: white;
  }
  /* Tạo ba cột bằng nhau, float cạnh nhau */
 .column {

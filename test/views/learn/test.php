@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,7 +12,7 @@
   <header>
     <div class="topnav">
       <a href = "../test/index.php?controller=homepage&action=home"><img src="../test/assets/images/logo.png" alt="logo"></a>
-      <a class="active" href="../test/index.php?controller=homepage&action=home">Trang chủ</a>
+      <a  href="../test/index.php?controller=homepage&action=home">Trang chủ</a>
       <a href="../test/index.php?controller=homepage&action=about">Về chúng tôi</a>
       <a href="../test/index.php?controller=homepage&action=contact">Liên hệ</a>
       <div class="search-container">
@@ -24,28 +23,10 @@
       </div>
       <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>
     </div>
-
   </header>
-  <section>
-    <div  class="banner_part">
-      <h1 style="text-align:center;">Let's Learn English</h1>
-      <img src="../test/assets/images/banner_img.png" alt="banner" class = "center_img">
-      </div>
-  </section> 
-
-  <section>
-    <div  class ="midnav"> 
-      <a href="../test/index.php?controller=learn&action=word_form" >Thêm từ mới</a>
-      <a href="../test/index.php?controller=learn&action=gender">Kho từ của bạn</a>
-      <a href="../test/index.php?controller=learn&action=test">Chế độ kiểm tra</a>
-      <a href="">Tính năng khác sẽ phát triển trong tương lai</a>
-    </div>
-  </section>
-  <section>
-      <div class="banner_part">
-        <img src="../test/assets/images/learning_img.png" alt ="learning" class="center_img">
-      </div>
-  </section>
+  <section style="height:80%">
+  <h1 style="text-align:center; text-size:20px; font-weigh:bold; margin-top:25%;"> Đây là chế độ Kiểm tra</h1>
+</section>
   <footer class="footer">
     <div class="column">
         <a href="../test/index.php?controller=homepage&action=home"> <img src="../test/assets/images/logo.png" alt=""> </a> 
@@ -77,6 +58,6 @@
         </div>
     </div>               
   </footer>
-
+  
 </body>
 </html>
