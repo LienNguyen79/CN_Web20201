@@ -5,7 +5,7 @@ class User
   public function userLogin($usernameEmail, $password)
   {
     $db = DB();
-    
+    $password = md5($password);
     //$hash_password = hash('sha256', $password);
     $req = $db->prepare("SELECT id FROM user WHERE  (username=:usernameEmail or email=:usernameEmail) AND  password=:password");
     //echo 'SELECT * FROM user WHERE username=:username AND email=:email AND password=:hash_password';
@@ -34,9 +34,11 @@ class User
           $st->execute();
           $count = $st->rowCount();
           if ($count < 1) {
+              $password = md5($password);
               $req = $db->prepare("INSERT INTO user(username,email,password) VALUES (:username,:email,:password)");
               $req->bindParam("username", $username, PDO::PARAM_STR);
-              //$hash_password = hash('sha256', $password);
+              //$password = hash('sha256', $password);
+              
               $req->bindParam("email", $email, PDO::PARAM_STR);
               $req->bindParam("password", $password, PDO::PARAM_STR);
               $req->execute();

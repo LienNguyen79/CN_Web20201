@@ -5,14 +5,12 @@ require_once('controllers'. DS .'home_controller.php');
 require_once('views'.DS.'authentication'. DS .'error.php');
 //require_once('views'. DS .'authentication'. DS .'login.php');
 
-
 class AuthenticationController extends BaseController
 {
 
   function __construct()
   {
-    $this->folder = 'authentication';
-    
+    $this->folder = 'authentication';    
   }
   function login()
   {
@@ -25,10 +23,7 @@ class AuthenticationController extends BaseController
       if (strlen(trim($usernameEmail)) > 1 && strlen(trim($password)) > 1) {
           $id = $userClass->userLogin($usernameEmail, $password);
           if ($id) {
-              //$url = 'authentication'.DS.'home.php';
               header("Location: ../test/index.php?controller=homepage&action=home");
-              // $this->folder = 'authentication';
-              // $this->render('home');
           } else {
             echo '<p style="color: red; text-align: center">
             Vui lòng kiểm tra lại thông tin nhập vào.
@@ -39,37 +34,42 @@ class AuthenticationController extends BaseController
   function register(){
     $homeController = new HomeController;
     $homeController->register();
-     $errorMsgReg = '';
     $userClass = new User;
     if (!empty($_POST['signupSubmit'])) {
       $username = $_POST['usernameReg'];
       $email = $_POST['emailReg'];
       $password = $_POST['passwordReg'];
-      //$username_check = preg_match('~^[A-Za-z0-9_]{3,20}$~i', $username);
-      //$email_check = preg_match('~^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.([a-zA-Z]{2,4})$~i', $email);
-      //$password_check = preg_match('~^[A-Za-z0-9!@#$%^&*()_]{6,20}$~i', $password);
-      
-      if ($username && $email && $password ) {
-          $id = $userClass->userRegistration($username, $email, $password);
-          
-          if ($id) {
-              
-              header("Location: ../test/index.php?controller=homepage&action=home");
-         
-          } else {
-              $errorMsgReg = "Tên người dùng hoặc Email đã tồn tại.";
-              echo '<p style="color: red; text-align: center">
-              Tên người dùng hoặc Email đã tồn tại
-                  </p>';
-          }
-      } else {
-          $errorMsgReg = "Vui lòng kiểm tra lại thông tin nhập vào.";
+      if (!preg_match ("/^[A-Za-z0-9_.]{6,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$/", $email)) 
+        { echo '<p style="color: red; text-align: center">
+          Email không hợp lệ
+              </p>';}
+      else {
+        if (!preg_match("/^[A-Za-z0-9!.,@#$%^&*()_]{6,20}+$/",$password) && !preg_match("/^[A-Za-z0-9!.,@#$%^&*()_]{6,20}+$/",$username)) {
           echo '<p style="color: red; text-align: center">
-          Vui lòng kiểm tra lại thông tin nhập vào.
+          Tài khoản hoặc mật khẩu không hợp lệ
               </p>';
-      }      
-     
-  } 
+        }
+        else {
+          if ($username && $email && $password ) {
+              $id = $userClass->userRegistration($username, $email, $password);
+              
+              if ($id) {
+                  
+                  header("Location: ../test/index.php?controller=homepage&action=home");
+            
+              } else {
+                  echo '<p style="color: red; text-align: center">
+                  Tên người dùng hoặc Email đã tồn tại
+                      </p>';
+              }
+          } else {
+              echo '<p style="color: red; text-align: center">
+              Vui lòng kiểm tra lại thông tin nhập vào.
+                  </p>';
+          }      
+        }
+      }
+    } 
 }
 
   function logout(){

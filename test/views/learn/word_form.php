@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/word_form_style.css" type="text/css">
   </head>
 <body >
+<a href = "../test/index.php?controller=homepage&action=home"><img src="../test/assets/images/back_icon.png" alt="icon" style=" width: 20px; height: 20px;">Quay lại</button></a>
 <div class="wordform">
     <form enctype="multipart/form-data" id="form1" method="post" action="">
         <label >Từ:</label>

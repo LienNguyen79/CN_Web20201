@@ -19,7 +19,7 @@
       <div class="search-container">
       <form method="POST" action="">
         <input type="text" placeholder="Tìm kiếm từ.." name="search">
-        <button type="submit" name = "searchSubmit"><img src="../test/assets/images/search_icon.png" alt="icon" style=" width: 20px; height: 20px;"><a href = "../test/index.php?controller=learn&action=gender"></a></button>
+        <a href = "../test/index.php?controller=learn&action=gender"><img src="../test/assets/images/search_icon.png" alt="icon" style=" width: 20px; height: 20px;" name = "searchSubmit"></a>
       </form>
       </div>
       <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>
@@ -44,8 +44,10 @@
   </section>
   <footer class="footer">
     <div class="column">
-        <a href="../test/index.php?controller=homepage&action=home"> <img src="../test/assets/images/logo.png" alt=""> </a> 
+        <a href="../test/index.php?controller=homepage&action=home"> <img src="../test/assets/images/logo.png" alt="logo"> </a> 
+        <h3> <i>Học, học nữa, học mãi</h3>
     </div>
+    
     <div class="column">
       <h4>Đăng kí nhận bản tin</h4>
       <p>Cập nhật thông tin một cách nhanh nhất để không bỏ lỡ thông báo mới nào về chúng tôi

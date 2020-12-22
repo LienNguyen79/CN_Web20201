@@ -24,7 +24,7 @@
       <div class="search-container">
       <form method="POST" action="">
         <input type="text" placeholder="Tìm kiếm từ.." name="search">
-        <button type="submit" name = "searchSubmit"><a href = "../test/index.php?controller=learn&action=gender"></a><img src="../test/assets/images/search_icon.png" alt="icon" style=" width: 20px; height: 20px;"></button>
+        <a href = "../test/index.php?controller=learn&action=gender"><img src="../test/assets/images/search_icon.png" alt="icon" style=" width: 20px; height: 20px;" name = "searchSubmit"></a>
       </form>
       </div>
       <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>
