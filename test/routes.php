@@ -2,7 +2,7 @@
 $controllers = array(
   'authentication' => ['login', 'error', 'register', 'logout'],
 
-  'learn' => ['gender','word_form'],
+  'learn' => ['gender','word_form', 'test'],
 
   'homepage' => ['home', 'about','gender_search', 'contact'],
   

@@ -75,16 +75,19 @@ class LearnController extends BaseController{
                     if ($data){echo '<p style="color: green; text-align: center">
                         Thêm từ thành công.
                             </p>';
-                            echo '<p style="color: red; text-align: center">
+                            echo '<p style="color: green; text-align: center">
                             Hãy xem trong :
-                                </p>';
-                    echo '<a href = "../test/index.php?controller=learn&action=gender">Kho từ của bạn</a>';}
+                              </p>  ';
+                    echo '<a  href = "../test/index.php?controller=learn&action=gender"><p style="color: red; text-align: center"> Kho từ của bạn</p> </a>';}
                 }
             }
 
         }
         //echo $image;
     
-    }   
+    } 
+    function test(){  
+        $this->render('test');
+    }
 }
 

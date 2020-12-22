@@ -7,7 +7,7 @@ function DB()
       
           
   try {
-    $dbconnection = new PDO('mysql:host=localhost;dbname=english_db', 'root','');
+    $dbconnection = new PDO('mysql:host=localhost;dbname=english_db', 'root','24561999');
     $dbconnection->exec("SET NAMES 'utf8'");
     $dbconnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $dbconnection;
