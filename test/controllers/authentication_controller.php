@@ -39,7 +39,7 @@ class AuthenticationController extends BaseController
       $username = $_POST['usernameReg'];
       $email = $_POST['emailReg'];
       $password = $_POST['passwordReg'];
-      if (!preg_match ("/^[A-Za-z0-9_.]{6,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$/", $email)) 
+      if (!preg_match ("/^[A-Za-z0-9_.]{4,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$/", $email)) 
         { echo '<p style="color: red; text-align: center">
           Email không hợp lệ
               </p>';}
@@ -80,10 +80,5 @@ class AuthenticationController extends BaseController
   }
   }
 
-  
-  function home(){
-    $this->folder = 'homepage';
-    $this->render('home');
-  }
 
 }

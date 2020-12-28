@@ -8,29 +8,33 @@ class HomepageController extends BaseController{
         
     }
     function home(){
-        $this->render('home');
-        if (!empty($_POST['searchSubmit'])){
-            $searchWord = $_POST['searchWord']; 
-            if (strlen(trim($searchWord)) > 1){
-               $words = new Word; 
-               $data = $words->find($searchWord);
-               $data = array('words' => $data);
-                //$this->render('gender_search',$data);
-                header("Location: ../test/index.php?controller=learn&action=gender_search");
-            }
-        } 
+        $this->render('home'); 
     }
 
-    public function upload(){
-        $this->render('word_form');
+    public function search(){
+      $searchWord = $_POST['searchWord']; 
+      //echo $searchWord;
+      if (strlen(trim($searchWord)) > 1) {
+         $words = new Word; 
+         $data = $words->find($searchWord);
+         $data = array('words' => $data);
+         $this->render('search', $data);
       }
+    }
+    
+    public function upload(){
+
+      $this->render('word_form');
+    }
     
 
     public function about(){
+      $this->folder = 'homepage';
         $this -> render('about');
       }
 
       public function contact(){
+        $this->folder = 'homepage';
         $this -> render('contact');
       }
 }

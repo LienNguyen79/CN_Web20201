@@ -14,7 +14,8 @@
   </head>
   <body>
   <div>
-  <?php include_once ('views/homepage/header.php'); ?>
+  <?php include_once ('views/homepage/header.php');
+  if(!empty($words)){ ?>
 <table >
   <th>Số thứ tự</th>
   <th>Từ</th>
@@ -26,7 +27,9 @@
   <th>Ngày tạo</th>
   <th>Ngày sửa</th>
   <th> Thao tác</th>
-  <?php  $i = 1;  
+  <?php
+  
+  $i = 1;  
     foreach ($words as $arr){
       echo "<tr>";
       //echo $arr['image'];
@@ -52,14 +55,17 @@
             <button name='delete'> Xóa từ </button>
           </form>
         <td>
-        
+        </table>
   <?php
     } 
     echo "</tr>";
-      
-  ?>
-</table>
+} else { ?>
+    <dialog open style="color: green; text-align: center; display: middle">
+        <p>Không tồn tại từ bạn tìm kiếm!</p>
+        <p> Hãy xem trong: Kho từ của bạn </p>
+        <a href="../test/index.php?controller=learn&action=gender"><button>OK</button></a>
+    </dialog>
+<?php }?>
 </div>
 <?php include_once ('views/homepage/footer.php'); ?>
   </body>
- 

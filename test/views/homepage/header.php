@@ -14,9 +14,9 @@
       <a href="../test/index.php?controller=homepage&action=about">Về chúng tôi</a>
       <a href="../test/index.php?controller=homepage&action=contact">Liên hệ</a>
       <div class="search-container">
-      <form method="POST" action="">
-        <input type="text" placeholder="Tìm kiếm từ.." name="search">
-        <a href = "../test/index.php?controller=learn&action=gender"><img src="../test/assets/images/search_icon.png" alt="icon" style=" width: 20px; height: 20px;" name = "searchSubmit"></a>
+      <form action="../test/index.php?controller=homepage&action=search" method="POST">
+        <input type="text" placeholder="Tìm kiếm từ.." name = "searchWord" >
+        <button type="submit"> <img src="../test/assets/images/search_icon.png" alt="icon" style=" width: 20px; height: 20px;" ></button>
       </form>
       </div>
       <a href = "../test/index.php?controller=authentication&action=logout">Đăng xuất</a>

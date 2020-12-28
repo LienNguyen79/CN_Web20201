@@ -2,9 +2,9 @@
 $controllers = array(
   'authentication' => ['login', 'error', 'register', 'logout'],
 
-  'learn' => ['gender','word_form', 'test'],
+  'learn' => ['gender','word_form', 'test', 'gender_search', 'doSomething', 'update'],
 
-  'homepage' => ['home', 'about','gender_search', 'contact'],
+  'homepage' => ['home', 'about', 'contact', 'search'],
   
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
@@ -16,8 +16,6 @@ if (!array_key_exists($controller, $controllers) || !in_array($action, $controll
 }
 // Nhúng file định nghĩa controller vào để có thể dùng được class định nghĩa trong file đó
 include_once('controllers'. DS . $controller . '_controller.php');
-//echo 'controllers'. DS . $controller . '_controller.php';
-//echo 'controllers/' . $controller . '_controller.php';
 // Tạo ra tên controller class từ các giá trị lấy được từ URL sau đó gọi ra để hiển thị trả về cho người dùng.
 $klass = str_replace('_', '', ucwords($controller, '_')) . 'Controller';
 //echo str_replace('_', '', ucwords($controller, '_')) . 'Controller';
